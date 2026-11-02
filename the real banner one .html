@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ✏️ TAB TITLE: the text shown on the browser tab -->
+<title>Download the app</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Unbounded:wght@600;800;900&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<!--
+╔══════════════════════════════════════════════════════════════╗
+║                     HOW TO EDIT THIS PAGE                    ║
+╠══════════════════════════════════════════════════════════════╣
+║ 1. EASIEST: scroll to the very bottom of this file and find  ║
+║    "⭐ SETTINGS". Change your APP NAME and your DOWNLOAD     ║
+║    LINKS there. They update everywhere on the page.          ║
+║                                                              ║
+║ 2. TEXT: press Ctrl+F (Cmd+F on Mac) and search  ✏️          ║
+║    Every text you can change has a ✏️ label above it.        ║
+║                                                              ║
+║ 3. PICTURES: search  🖼️                                      ║
+║    All pictures are in the "images" folder.                  ║
+║    To change one: put your new picture in the images folder  ║
+║    with the SAME name (for example banner-purple.jpg).       ║
+║    Or change the file name after src="images/...".           ║
+║                                                              ║
+║ 4. COLORS: search  🎨  (just below this box)                 ║
+╚══════════════════════════════════════════════════════════════╝
+-->
+<style>
+/* 🎨 COLORS — change these to change the colors of the whole page */
+:root{
+  --cyan:  #25F4EE;   /* neon blue */
+  --pink:  #FE2C55;   /* neon pink */
+  --pink-button: #DB1144; /* darker pink for buttons (easier to read white text) */
+  --black: #000000;   /* page background */
+  --card:  #0F0F11;   /* boxes background */
+  --line:  #27272A;   /* borders */
+  --grey:  #A1A1AA;   /* small grey text */
+  --white: #FFFFFF;
+}
+
+/* ───────── basic page setup (you don't need to change this) ───────── */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:hidden}
+.page{position:relative;overflow:hidden}
+body{margin:0;background:var(--black);color:var(--white);font-family:'Manrope',system-ui,sans-serif;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:var(--cyan)}
+.wrap{max-width:1240px;margin:0 auto;padding-left:24px;padding-right:24px}
+.display{font-family:'Unbounded',sans-serif}
+.neon-text{text-shadow:-4px -3px 0 var(--cyan),4px 3px 0 var(--pink)}
+
+/* ───────── top menu ───────── */
+.nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:22px;padding-bottom:22px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--white)}
+.logo-mark{position:relative;width:40px;height:40px}
+.logo-mark span{position:absolute;inset:0;border-radius:12px}
+.logo-mark .c{background:var(--cyan);transform:translate(-3px,-3px)}
+.logo-mark .p{background:var(--pink);transform:translate(3px,3px)}
+.logo-mark .b{background:var(--black);display:flex;align-items:center;justify-content:center}
+.logo-name{font-family:'Unbounded',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.5px}
+.nav-links{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.nav-links a{color:#D4D4D8;text-decoration:none;font-weight:700;font-size:15px;padding:12px 14px}
+.nav-links a:hover{color:var(--white)}
+.nav-links .get{color:var(--black);background:var(--white);font-weight:800;padding:12px 22px;border-radius:999px;box-shadow:-3px -3px 0 var(--cyan),3px 3px 0 var(--pink)}
+.nav-links .get:hover{color:var(--black)}
+
+/* ───────── hero (first big part) ───────── */
+.hero{position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:64px;padding-top:56px;padding-bottom:96px}
+.hero-text{position:relative;flex:1 1 480px;min-width:0;display:flex;flex-direction:column;gap:28px}
+.hero-phone{position:relative;flex:1 1 340px;display:flex;justify-content:center;padding:20px 0}
+.glow{position:absolute;border-radius:50%;filter:blur(140px);animation:glowpulse 6s ease-in-out infinite;pointer-events:none}
+.glow.one{width:520px;height:520px;background:var(--pink);opacity:.35;right:-80px;top:0}
+.glow.two{width:420px;height:420px;background:var(--cyan);opacity:.28;right:260px;top:260px;animation-duration:7s}
+.pill{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border-radius:999px;border:1px solid #3F3F46;background:#0D0D0F;font-size:14px;font-weight:700;color:#E4E4E7}
+.pill .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);animation:blink 1.6s infinite}
+.hero h1{margin:0;font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(44px,6.4vw,84px);line-height:.98;letter-spacing:-3px}
+.hero p{margin:0;max-width:520px;font-size:19px;line-height:1.6;color:var(--grey)}
+.downloads{display:flex;flex-wrap:wrap;gap:14px}
+.downloads img{height:60px;width:auto}
+.checks{display:flex;flex-wrap:wrap;gap:22px;font-size:14px;font-weight:700;color:var(--grey)}
+.checks span{display:flex;align-items:center;gap:8px}
+
+/* ───────── the phone ───────── */
+.phone-float{position:relative;animation:floaty 6s ease-in-out infinite}
+.phone-back{position:absolute;inset:0;border-radius:52px}
+.phone-back.c{background:var(--cyan);transform:translate(-10px,-10px)}
+.phone-back.p{background:var(--pink);transform:translate(10px,10px)}
+.phone{position:relative;width:310px;height:640px;border-radius:52px;background:#0A0A0B;border:10px solid #1C1C1F;overflow:hidden}
+.phone .blob{position:absolute;border-radius:50%;filter:blur(60px)}
+.phone .blob.p{width:260px;height:260px;background:var(--pink);opacity:.7;left:-60px;top:120px}
+.phone .blob.c{width:220px;height:220px;background:var(--cyan);opacity:.55;right:-70px;top:300px}
+.screenshot{position:absolute;top:0;left:0;width:100%;height:196px;object-fit:cover;object-position:top}
+.side-card{position:absolute;width:230px;border-radius:18px;border:2px solid #3F3F46}
+.side-card.left{left:-150px;top:150px;transform:rotate(-8deg);box-shadow:-6px -6px 0 var(--cyan)}
+.side-card.right{right:-155px;top:330px;transform:rotate(7deg);box-shadow:6px 6px 0 var(--pink)}
+.notch{position:absolute;width:120px;height:26px;border-radius:20px;background:#000;left:50%;top:10px;transform:translateX(-50%);z-index:2}
+.phone-section{position:absolute;left:16px;right:16px;display:flex;flex-direction:column;gap:10px}
+.phone-label{font-size:12px;font-weight:800;letter-spacing:1.5px;color:var(--grey)}
+.styles-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.styles-grid img,.styles-grid span{width:100%;height:52px;object-fit:cover;border-radius:10px}
+.styles-grid .selected{outline:3px solid #fff;outline-offset:2px}
+.name-styles{display:flex;gap:8px}
+.name-styles span{flex:1;text-align:center;padding:9px 0;border-radius:10px;background:#27272A;font-size:13px;font-weight:800}
+.save-btn{position:absolute;left:16px;right:16px;bottom:80px;display:flex;align-items:center;justify-content:center;gap:8px;padding:13px 0;border-radius:12px;background:var(--white);color:#000;font-size:14px;font-weight:800;box-shadow:-3px -3px 0 var(--cyan),3px 3px 0 var(--pink)}
+.tabbar{position:absolute;left:0;right:0;bottom:0;height:64px;background:#000;display:flex;align-items:center;justify-content:space-around;font-size:10px;font-weight:700;color:#D4D4D8}
+.tabbar > span{display:flex;flex-direction:column;align-items:center;gap:3px}
+.plus{position:relative;width:46px;height:30px}
+.plus i{position:absolute;inset:0;border-radius:9px}
+.plus .c{background:var(--cyan);transform:translateX(-4px)}
+.plus .p{background:var(--pink);transform:translateX(4px)}
+.plus .w{background:#fff;color:#000;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;font-style:normal}
+.bubble{position:absolute;z-index:3;display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:16px;background:#161618;border:1px solid #3F3F46;font-size:14px;font-weight:800}
+.bubble.left{left:-80px;bottom:60px}
+.bubble.right{right:-70px;top:60px}
+.bubble img{width:56px;height:34px;object-fit:cover;border-radius:8px}
+.bubble .icon{width:32px;height:32px;border-radius:10px;background:var(--cyan);display:flex;align-items:center;justify-content:center}
+
+/* ───────── moving pink strip ───────── */
+.ticker{background:var(--pink);transform:rotate(-2deg);margin:0 -40px;padding:18px 0;overflow:hidden;border-top:4px solid var(--cyan);border-bottom:4px solid var(--cyan)}
+.ticker-move{display:flex;width:max-content;gap:40px;font-family:'Unbounded',sans-serif;font-weight:900;font-size:30px;color:#000;white-space:nowrap;animation:ticker 18s linear infinite}
+
+/* ───────── sections ───────── */
+.section{padding-top:110px;padding-bottom:40px;display:flex;flex-direction:column;gap:48px}
+.eyebrow{font-size:14px;font-weight:800;letter-spacing:3px;color:var(--cyan)}
+.section h2{margin:0;font-family:'Unbounded',sans-serif;font-weight:800;font-size:clamp(30px,4.5vw,56px);line-height:1.05;letter-spacing:-1.5px}
+.cards{display:flex;flex-wrap:wrap;gap:20px}
+.card{flex:1 1 300px;padding:32px;border-radius:28px;background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;gap:16px}
+.card h3{margin:0;font-size:22px;font-weight:800}
+.card p{margin:0;font-size:16px;line-height:1.6;color:var(--grey)}
+.card .icon{width:56px;height:56px;border-radius:18px;display:flex;align-items:center;justify-content:center}
+.step{flex:1 1 280px;display:flex;flex-direction:column;gap:14px;padding-top:20px;border-top:2px solid var(--line)}
+.step .num{font-family:'Unbounded',sans-serif;font-weight:900;font-size:72px;line-height:1;color:#000}
+.step h3{margin:0;font-size:22px;font-weight:800}
+.step p{margin:0;font-size:16px;line-height:1.6;color:var(--grey)}
+
+/* ───────── big box at the bottom ───────── */
+.big-box{position:relative;border-radius:40px;background:var(--card);border:1px solid var(--line);padding:64px 48px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px;box-shadow:-8px -8px 0 var(--cyan),8px 8px 0 var(--pink);margin:60px 0 100px}
+.big-box h2{margin:0;font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(30px,4.5vw,60px);line-height:1.02;letter-spacing:-2px}
+.big-box p{margin:0;font-size:18px;line-height:1.6;color:var(--grey)}
+.big-box .text{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:20px}
+.btn-big{align-self:flex-start;display:inline-flex;align-items:center;gap:12px;min-height:56px;padding:0 30px;border-radius:999px;background:var(--pink-button);color:#fff;text-decoration:none;font-weight:800;font-size:18px}
+.qr{width:200px;height:200px;border-radius:28px;background:#fff;padding:12px}
+
+/* ───────── footer ───────── */
+footer{border-top:1px solid var(--line)}
+.foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:32px;padding-bottom:32px;font-size:14px;color:var(--grey)}
+.foot nav{display:flex;flex-wrap:wrap;gap:6px}
+.foot nav a{color:var(--grey);text-decoration:none;padding:12px 10px}
+.foot nav a:hover{color:#fff}
+
+/* ───────── "coming soon" pop-up ───────── */
+.popup-bg{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.75);display:none;align-items:center;justify-content:center;padding:24px}
+.popup-bg.open{display:flex;animation:fadeIn .25s ease}
+.popup{position:relative;width:100%;max-width:440px;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:40px 32px 32px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px;box-shadow:-6px -6px 0 var(--cyan),6px 6px 0 var(--pink);animation:popIn .3s ease}
+.popup .rocket{width:72px;height:72px;border-radius:22px;background:var(--pink-button);display:flex;align-items:center;justify-content:center}
+.popup h2{margin:0;font-family:'Unbounded',sans-serif;font-weight:800;font-size:28px;letter-spacing:-1px}
+.popup p{margin:0;font-size:16px;line-height:1.6;color:var(--grey)}
+.popup .ok{margin-top:8px;min-height:52px;padding:0 32px;border:0;border-radius:999px;background:var(--white);color:#000;font-family:inherit;font-weight:800;font-size:16px;cursor:pointer;box-shadow:-3px -3px 0 var(--cyan),3px 3px 0 var(--pink)}
+.popup .follow{color:var(--cyan);font-weight:700;font-size:15px;padding:8px}
+.popup .close{position:absolute;top:12px;right:12px;width:44px;height:44px;border:0;border-radius:50%;background:transparent;color:var(--grey);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.popup .close:hover{color:#fff;background:#27272A}
+.loading{display:flex;flex-direction:column;align-items:center;gap:18px;width:100%;padding:8px 0}
+.spinner{width:64px;height:64px;border-radius:50%;border:5px solid #27272A;border-top-color:var(--cyan);border-right-color:var(--pink);animation:spin .8s linear infinite}
+.loading-text{font-size:16px;font-weight:700;color:#E4E4E7;min-height:24px}
+.bar{width:100%;height:8px;border-radius:999px;background:#27272A;overflow:hidden}
+.bar span{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--cyan),var(--pink))}
+.done{display:none;flex-direction:column;align-items:center;gap:16px}
+.popup.finished .loading{display:none}
+.popup.finished .done{display:flex;animation:popIn .3s ease}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes fill{from{width:0}to{width:100%}}
+
+/* Refined mobile-friendly verification popup, matched to the site's neon theme */
+.popup-bg{padding:16px;background:rgba(0,0,0,.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.popup{max-width:420px;max-height:calc(100dvh - 32px);overflow-y:auto;padding:32px 22px 24px;border-radius:24px;background:linear-gradient(155deg,#19191e 0%,#0b0b0d 85%);border:1px solid #35353b;box-shadow:-3px -3px 0 var(--cyan),3px 3px 0 var(--pink),0 24px 80px #000b;gap:14px}
+.popup .done{width:100%;gap:15px}
+.popup .rocket{width:56px;height:56px;border-radius:17px;background:linear-gradient(135deg,var(--cyan),var(--pink));box-shadow:0 0 25px #25f4ee25}
+.popup .rocket svg{width:29px;height:29px}
+.popup h2{font-size:clamp(20px,5.5vw,25px);line-height:1.25;letter-spacing:-.6px}
+.popup p{font-size:14px;line-height:1.65;max-width:340px}
+.popup .captcha-box{width:100%;min-height:72px;display:flex;justify-content:center;align-items:center;overflow:visible;margin:5px auto}
+.popup .ok{width:100%;min-height:50px;background:var(--pink-button);color:white;box-shadow:-3px -3px 0 var(--cyan),3px 3px 0 #ff4772}
+.popup .close{top:8px;right:8px;background:#ffffff0b;color:#dedee4;width:36px;height:36px}
+.popup .follow{font-size:13px}
+@media(max-width:480px){.popup-bg{padding:12px}.popup{padding:30px 16px 22px;border-radius:20px}.popup .captcha-box{max-width:100%}}
+
+/* the download buttons bounce when someone clicks "Get the app" */
+.downloads.flash a{animation:flash .6s ease 2}
+@keyframes flash{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes popIn{from{opacity:0;transform:scale(.9) translateY(10px)}to{opacity:1;transform:none}}
+
+/* ───────── animations ───────── */
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-16px) rotate(-1deg)}}
+@keyframes glowpulse{0%,100%{opacity:.55}50%{opacity:.9}}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+
+/* ───────── phone screens (small) ───────── */
+@media (max-width:820px){
+  .big-box{padding:40px 24px}
+}
+/* ───────── 📱 PHONE DESIGN (screens smaller than 760px) ───────── */
+@media (max-width:760px){
+  .nav{padding-top:14px;padding-bottom:14px}
+  .nav-links a:not(.get){display:none}
+  .logo-name{font-size:16px}
+  .logo-mark{width:34px;height:34px}
+
+  /* order on phones: badge → title → phone picture → text → buttons */
+  .hero{flex-direction:column;align-items:stretch;gap:0;padding-top:12px;padding-bottom:56px}
+  .hero-text{display:contents}
+  .pill{order:1;margin-bottom:16px;font-size:13px}
+  .hero h1{order:2;font-size:11.4vw;letter-spacing:-1.5px;line-height:1}
+  .hero-phone{order:3;padding:6px 0 0}
+  .phone-float{zoom:.7}
+  .hero p{order:4;font-size:16px;margin-top:8px}
+  .downloads{order:5;margin-top:22px;gap:10px}
+  .downloads img{height:48px}
+  .checks{order:6;margin-top:18px;gap:14px;font-size:13px}
+  .glow.one{width:320px;height:320px;right:-120px;top:120px}
+  .glow.two{width:280px;height:280px;right:auto;left:-120px;top:360px}
+
+  .ticker{padding:12px 0}
+  .ticker-move{font-size:20px;gap:24px}
+  .section{padding-top:64px;gap:28px}
+  .card{padding:24px;gap:12px}
+  .step .num{font-size:56px}
+  .big-box{flex-direction:column;align-items:stretch;padding:36px 22px;margin:40px 0 64px;border-radius:28px}
+  .btn-big{align-self:stretch;justify-content:center}
+  .qr{width:170px;height:170px;align-self:center}
+  .foot{flex-direction:column;align-items:flex-start;gap:6px}
+  .popup{padding:36px 22px 26px}
+  .popup h2{font-size:24px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none !important}}
+
+/* Always-available exit control for the site's verification dialog */
+#verification-back{position:fixed;top:max(16px,env(safe-area-inset-top));left:16px;z-index:2147483647;display:none;align-items:center;gap:8px;border:1px solid #ffffff50;border-radius:999px;padding:12px 17px;background:#15151b;color:white;font:700 14px system-ui,sans-serif;box-shadow:0 5px 24px #0009;cursor:pointer}
+body.verification-active #verification-back{display:flex}
+#verification-back:focus-visible{outline:3px solid #25f4ee;outline-offset:3px}
+</style>
+</head>
+
+
+<body>
+<div class="page">
+
+<!-- ======================================================= -->
+<!--                      TOP MENU                           -->
+<!-- ======================================================= -->
+<header class="wrap nav">
+  <a href="#top" class="logo">
+    <span class="logo-mark" aria-hidden="true">
+      <span class="c"></span><span class="p"></span>
+      <span class="b"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5z"/></svg></span>
+    </span>
+    <!-- ✏️ APP NAME: change it in ⭐ SETTINGS at the bottom (it fills in by itself) -->
+    <span class="logo-name" data-app-name>TiKToK</span>
+  </a>
+  <nav class="nav-links" aria-label="Main">
+    <!-- ✏️ MENU TEXT -->
+    <a href="#features">Features</a>
+    <a href="#how">How to install</a>
+    <a href="#download" class="get">Get the app</a>
+  </nav>
+</header>
+
+
+<!-- ======================================================= -->
+<!--          HERO (the first big part of the page)          -->
+<!-- ======================================================= -->
+<section id="top" class="wrap hero">
+  <div class="glow one" aria-hidden="true"></div>
+  <div class="glow two" aria-hidden="true"></div>
+
+  <!-- ======================= LEFT SIDE: TEXT ======================= -->
+  <div class="hero-text">
+    <!-- ✏️ SMALL BADGE TEXT above the title -->
+    <span class="pill"><span class="dot" aria-hidden="true"></span>Join the banner trend</span>
+
+    <!-- ✏️ BIG TITLE (the last line has the neon effect) -->
+    <h1>Your profile.<br>Your banner.<br><span class="neon-text">Your vibe.</span></h1>
+    <!-- ✏️ TEXT UNDER THE TITLE -->
+    <p>TikTok hasn't given you banners yet? Force the update.Unlock the latest TikTok banner feature.</p>
+
+    <!-- 🖼️ DOWNLOAD BUTTONS (links are set in ⭐ SETTINGS at the bottom) -->
+    <div class="downloads" id="download">
+      <a href="#" data-link="appStore" aria-label="Download on the App Store"><img src="images/app-store-badge.svg" alt="Download on the App Store"></a>
+      <a href="#" data-link="googlePlay" aria-label="Get it on Google Play"><img src="images/google-play-badge.svg" alt="Get it on Google Play"></a>
+    </div>
+
+    <!-- ✏️ SMALL CHECK LIST (change [SIZE] to your app size) -->
+    <div class="checks">
+      <span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#25F4EE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>100% free</span>
+      <span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#25F4EE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Only [SIZE] MB</span>
+      <span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#25F4EE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Android &amp; iPhone</span>
+    </div>
+  </div>
+
+  <!-- ======================= THE PHONE ======================= -->
+  <div class="hero-phone">
+    <div class="phone-float">
+      <!-- 🖼️ TILTED PROFILE CARDS behind the phone -->
+      <img class="side-card left" src="images/profile-2.jpg" alt="Example profile with a pink cherry blossom banner">
+      <img class="side-card right" src="images/profile-3.jpg" alt="Example profile with a moonlit cherry blossom banner">
+
+      <div class="phone-back c" aria-hidden="true"></div>
+      <div class="phone-back p" aria-hidden="true"></div>
+
+      <div class="phone" role="img" aria-label="Phone showing a profile with a custom banner and the style editor">
+        <div class="blob p" aria-hidden="true"></div>
+        <div class="blob c" aria-hidden="true"></div>
+
+        <!-- 🖼️ PHONE SCREENSHOT (top of the phone) -->
+        <img class="screenshot" src="images/profile-1.jpg" alt="">
+        <div class="notch" aria-hidden="true"></div>
+
+        <div class="phone-section" style="top:214px">
+          <!-- ✏️ PHONE LABEL -->
+          <span class="phone-label">BANNER STYLES</span>
+          <!-- 🖼️ BANNER STYLE BOXES: first 3 are pictures, last 3 are colors -->
+          <div class="styles-grid">
+            <img class="selected" src="images/banner-purple.jpg" alt="">
+            <img src="images/banner-pink.jpg" alt="">
+            <img src="images/banner-moon.jpg" alt="">
+            <span style="background:#18181B;border:2px solid var(--cyan)"></span>
+            <span style="background:#7C3AED"></span>
+            <span style="background:#FACC15"></span>
+          </div>
+        </div>
+
+        <div class="phone-section" style="top:374px">
+          <!-- ✏️ PHONE LABEL + NAME STYLE BUTTONS -->
+          <span class="phone-label">NAME STYLE</span>
+          <div class="name-styles">
+            <span style="background:#fff;color:#000">Bold</span>
+            <span style="font-family:'UnifrakturMaguntia',serif;font-weight:400;font-size:14px">Gothic</span>
+            <span style="font-style:italic">Italic</span>
+          </div>
+        </div>
+
+        <!-- ✏️ PHONE BUTTON TEXT -->
+        <div class="save-btn" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Save banner
+        </div>
+
+        <div class="tabbar" aria-hidden="true">
+          <span style="color:#fff"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9H3z"/></svg>Home</span>
+          <span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4D4D8" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>Discover</span>
+          <span class="plus"><i class="c"></i><i class="p"></i><i class="w">+</i></span>
+          <span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4D4D8" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 8l9 6 9-6"/></svg>Inbox</span>
+          <span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4D4D8" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>Me</span>
+        </div>
+      </div>
+
+      <!-- 🖼️ + ✏️ LITTLE BUBBLES next to the phone -->
+      <div class="bubble left">
+        <img src="images/banner-moon.jpg" alt="">
+        Banner saved
+      </div>
+      <div class="bubble right">
+        <span class="icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/></svg></span>
+        Free download
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ======================================================= -->
+<!--                  MOVING PINK STRIP                      -->
+<!-- ======================================================= -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-move">
+    <!-- ✏️ STRIP TEXT: change BOTH lines to the same text -->
+    <span>BANNERS ✦ PROFILES ✦ CUSTOMIZE ✦ STAND OUT ✦ BANNERS ✦ PROFILES ✦ CUSTOMIZE ✦ STAND OUT ✦</span>
+    <span>BANNERS ✦ PROFILES ✦ CUSTOMIZE ✦ STAND OUT ✦ BANNERS ✦ PROFILES ✦ CUSTOMIZE ✦ STAND OUT ✦</span>
+  </div>
+</div>
+
+
+<!-- ======================================================= -->
+<!--                      FEATURES                           -->
+<!-- ======================================================= -->
+<section id="features" class="wrap section">
+  <div style="display:flex;flex-direction:column;gap:14px;max-width:720px">
+    <!-- ✏️ FEATURES TITLE -->
+    <span class="eyebrow">WHY YOU'LL LOVE IT</span>
+    <h2>Everything you need, <span style="color:var(--pink)">in one swipe.</span></h2>
+  </div>
+
+  <div class="cards">
+    <!-- ✏️ FEATURE 1 -->
+    <div class="card">
+      <span class="icon" style="background:var(--cyan)" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="13" height="14" rx="3"/><path d="M16 10l5-3v10l-5-3"/></svg></span>
+      <h3>Force the banner update</h3>
+      <p>TikTok hasn't rolled banners out to your account? This is the workaround. Unlock the latest TikTok banner feature and get it on your profile..</p>
+    </div>
+
+    <!-- ✏️ FEATURE 2 -->
+    <div class="card">
+      <span class="icon" style="background:var(--pink)" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg></span>
+      <h3>Profile customizer</h3>
+      <p>Match your profile picture, colors and bio to your banner so your whole page looks clean.</p>
+    </div>
+
+    <!-- ✏️ FEATURE 3 (put your third app feature here) -->
+    <div class="card">
+      <span class="icon" style="background:#fff" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.5 3-5.5 6.5-5.5s6.5 2 6.5 5.5"/><circle cx="17.5" cy="9" r="2.5"/><path d="M17 14.5c2.5 0 4.5 1.5 4.5 4"/></svg></span>
+      <h3>Match your whole profile</h3>
+      <p>Set your new banner, then line up your profile picture, colors and bio so your whole page looks clean and intentional</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ======================================================= -->
+<!--                   HOW TO INSTALL                        -->
+<!-- ======================================================= -->
+<section id="how" class="wrap section">
+  <!-- ✏️ STEPS TITLE -->
+  <h2>Ready in <span class="neon-text">3 steps</span></h2>
+
+  <div class="cards">
+    <!-- ✏️ STEP 1 -->
+    <div class="step">
+      <span class="num" style="-webkit-text-stroke:2px var(--cyan)">01</span>
+      <h3>Tap download</h3>
+      <p>Pick App Store or Google Play.</p>
+    </div>
+    <!-- ✏️ STEP 2 -->
+    <div class="step">
+      <span class="num" style="-webkit-text-stroke:2px var(--pink)">02</span>
+      <h3>Install the app</h3>
+      <p>It installs by itself, just like any other app.</p>
+    </div>
+    <!-- ✏️ STEP 3 -->
+    <div class="step">
+      <span class="num" style="-webkit-text-stroke:2px #fff">03</span>
+      <h3>Unlock your TikTok banner</h3>
+      <p>Open the app, pick a trending banner style.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ======================================================= -->
+<!--                 BIG BOX WITH QR CODE                    -->
+<!-- ======================================================= -->
+<section class="wrap">
+  <div class="big-box">
+    <div class="text">
+      <!-- ✏️ BIG BOX TITLE + TEXT -->
+      <h2>Make your profile <span style="color:var(--cyan)">impossible to skip.</span></h2>
+      <p>Scan the code with your phone camera, or tap the button.</p>
+      <a href="#download" class="btn-big">
+        <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 20h16"/></svg>
+        Download free
+      </a>
+    </div>
+    <!-- 🖼️ QR CODE: this one is fake. Make a real one for your link
+         (search "free QR code generator"), save it as images/qr-code.png,
+         then change the file name below to qr-code.png -->
+    <img class="qr" src="images/qr-code.svg" alt="QR code to download the app">
+  </div>
+</section>
+
+
+<!-- ======================================================= -->
+<!--                        FOOTER                           -->
+<!-- ======================================================= -->
+<footer>
+  <div class="wrap foot">
+    <span class="display" style="font-weight:800;color:#fff" data-app-name>TiKToK</span>
+    <nav aria-label="Footer">
+      <!-- ✏️ FOOTER LINKS -->
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Contact</a>
+    </nav>
+    <span>© 2026 <span data-app-name>TiKToK</span></span>
+  </div>
+</footer>
+
+
+</div><!-- end of page -->
+
+
+<!-- ======================================================= -->
+<!--     POP-UP that shows when someone clicks a download    -->
+<!--     button while the app is not ready yet               -->
+<!-- ======================================================= -->
+<!-- Store buttons now link directly to the official TikTok listings. -->
+<script>
+const SETTINGS = {
+  appName: "TikTok",
+  appStore: "https://apps.apple.com/app/tiktok/id835599320",
+  googlePlay: "https://play.google.com/store/apps/details?id=com.zhiliaoapp.musically"
+};
+document.querySelectorAll("[data-app-name]").forEach(el => el.textContent = SETTINGS.appName);
+document.querySelectorAll("[data-link]").forEach(el => {
+  el.href = SETTINGS[el.dataset.link];
+  el.rel = "noopener noreferrer";
+});
+const downloads = document.getElementById("download");
+document.querySelectorAll('a[href="#download"]').forEach(el => el.addEventListener("click", e => {
+  e.preventDefault();
+  downloads.scrollIntoView({ behavior: "smooth", block: "center" });
+  setTimeout(() => {
+    downloads.classList.remove("flash"); void downloads.offsetWidth;
+    downloads.classList.add("flash");
+  }, 600);
+}));
+</script>
+</body>
+</html>
